@@ -133,17 +133,17 @@ const routes = [
             },
             {
                 exact: true,
-                path: '/app/adservice',
+                path: '/pages/advertising-services',
                 component: lazy(() => import('./views/insights/AdvertisingServicesPage'))
             },
             {
                 exact: true,
-                path: '/app/contacts',
+                path: '/pages/contact-agents',
                 component: lazy(() => import('./views/insights/ContactAgentPage'))
             },
             {
                 exact: true,
-                path: '/app/leads',
+                path: '/pages/leads',
                 component: lazy(() => import('./views/insights/LeadPage'))
             },
             {
