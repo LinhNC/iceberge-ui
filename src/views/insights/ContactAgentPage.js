@@ -7,7 +7,7 @@ const ContactAgentPage = () => {
     const [contacts, setContacts] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('https://iceberg.linh.work/Insight/QueryAgent', {
+        fetch('https://iceberg-srv.linh.work/Insight/QueryAgent', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"

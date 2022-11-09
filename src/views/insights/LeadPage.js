@@ -7,7 +7,7 @@ const LeadPage = () => {
     const [leads, setLeads] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('https://iceberg.linh.work/Insight/QueryLead', {
+        fetch('https://iceberg-srv.linh.work/Insight/QueryLead', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
