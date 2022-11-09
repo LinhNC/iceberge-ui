@@ -43,7 +43,6 @@ const ContactAgentPage = () => {
 
     return (
         <React.Fragment>
-            <div class="page-header-title"><h5 class="m-b-20" style={{ color: '#505050', fontSize: '24px' }}>Contact Agents</h5></div>
             <Row>
                 <Col>
                     <Card>

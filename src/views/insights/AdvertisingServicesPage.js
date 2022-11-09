@@ -33,7 +33,6 @@ const AdvertisingServicesPage = () => {
 
     return (
         <React.Fragment>
-            <div className="page-header-title"><h5 className="m-b-20" style={{ color: '#505050', fontSize: '24px', fontWeight: '500px' }}>Advertising Services</h5></div>
             <Row>
                 <Col>
                     <Card>
