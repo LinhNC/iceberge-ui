@@ -115,7 +115,7 @@ const AdvertisingServicesPage = () => {
                         </Card.Header>
                         <Card.Body>
                             <Row>
-                                <img style={{ with: '20px', height: '20px', marginTop: '2px', marginRight: '10px', marginLeft: '14px' }} src={lightImg} alt="activity-user" /> <p style={{ color: '#845D9C', fontSize: '18px', fontWeight: '500' }}>Top 5 locations to run your sponsored listing</p>
+                                <img style={{ with: '20px', height: '20px', marginTop: '2px', marginRight: '10px', marginLeft: '14px' }} src={lightImg} alt="activity-user" /> <p style={{ color: '#845D9C', fontSize: '18px', fontWeight: '500' }}>Top 5 locations to run your advertising listing</p>
                             </Row>
                             <Row>
                                 <ul>{bannerListingKeywordsHtml}</ul>
@@ -138,7 +138,7 @@ const AdvertisingServicesPage = () => {
                                 <div>
                                     <Button variant="danger" className="text-capitalize">
                                         <i className="feather icon-plus mx-1" />
-                                        Create now
+                                        Contact us
                                     </Button>
                                 </div>
                             </div>
