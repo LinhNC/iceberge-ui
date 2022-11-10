@@ -26,11 +26,11 @@ const RadarOptions = {
             backdropColor: "rgba(203, 197, 11, 1)"
         },
         angleLines: {
-            color: "rgba(255, 255, 255, .3)",
+            color: "#CCCCCC",
             lineWidth: 1
         },
         gridLines: {
-            color: "rgba(255, 255, 255, .3)",
+            color: "#CCCCCC",
             circular: true
         }
     }
