@@ -4,22 +4,48 @@ import { Link } from 'react-router-dom';
 
 import AmChartEarnings from './chart/AmChartEarnings';
 import AmChartStatistics6 from './chart/AmChartStatistics6';
+import BedroomArmChart from './chart/BedroomArmChart';
 
 import avatar1 from '../../../assets/images/user/avatar-1.jpg';
 import avatar2 from '../../../assets/images/user/avatar-2.jpg';
 import avatar3 from '../../../assets/images/user/avatar-3.jpg';
 
-//import axios from 'axios';
 import { API_DATA_SERVER } from './../../../config/constant';
 
 const DashDefault = () => {
+    const [loading, setLoading] = React.useState(true);
+
     const [minAge, setMinAge] = React.useState("");
     const [maxAge, setMaxAge] = React.useState("");
 
     const [minPer, setMinPer] = React.useState(999999.99);
     const [maxPer, setMaxPer] = React.useState(0);
 
+    const [loadingBedroomData, setLoadingBedroomData] = React.useState(true);
+    const [bedroomData, setBedroomData] = React.useState([{ numberBadroom: 0, distribution: 0 }]);
     React.useEffect(() => {
+        if (loadingBedroomData) {
+        fetch(API_DATA_SERVER + 'Insight/QueryAttributeBedroom', {
+            method: "GET",  
+            headers: {
+                "Content-Type": "application/json"
+            },
+            credentials: "same-origin",
+            cache: "force-cache"
+        }).then((response) => {
+            response.json().then((objs) => {
+                if (objs !== null && objs !== undefined && objs.isSuccess) {
+                    console.log('GET', objs.data);
+                    setBedroomData(objs.data);
+                }
+            });
+        });
+        setLoadingBedroomData(false);
+        }
+    }, [bedroomData, setBedroomData, loadingBedroomData]);
+
+    React.useEffect(() => {
+        if (loading) {
         fetch(API_DATA_SERVER + 'Insight/QueryAge', {
             method: "GET",  
             headers: {
@@ -29,28 +55,33 @@ const DashDefault = () => {
             cache: "force-cache"
         }).then((response) => {
             response.json().then((objs) => {
-                let minPrecent = 999999.99;
-                let maxPrecent = 0.0;
-                console.log(objs);
-                for (var i = 0; i < objs.length; i++)
-                {
-                    if (objs[i].distribution < minPrecent) {
-                        minPrecent = objs[i].distribution;
-                        setMinAge(objs[i].age);
-                        console.log(maxPrecent);
+                
+                    let minPrecent = 999999.99;
+                    let maxPrecent = 0.0;
+                    for (var i = 0; i < objs.data.length; i++)
+                    {
+                        if (objs.data[i].distribution < minPrecent) {
+                            minPrecent = objs.data[i].distribution;
+                            setMinAge(objs.data[i].age);
+                            console.log(maxPrecent);
+                        }
+                        if (objs.data[i].distribution > maxPrecent) {
+                            maxPrecent = objs.data[i].distribution;
+                            setMaxAge(objs.data[i].age);
+                            console.log(maxPrecent);
+                        }
                     }
-                    if (objs[i].distribution > maxPrecent) {
-                        maxPrecent = objs[i].distribution;
-                        setMaxAge(objs[i].age);
-                        console.log(maxPrecent);
-                    }
-                }
-                setMinPer(minPrecent * 100);
-                setMaxPer(maxPrecent * 100);
+                    setMinPer(minPrecent * 100);
+                    setMaxPer(maxPrecent * 100);
+                
             });
         });
-    }, [minAge, maxAge, minPer, maxPer]);
+        setLoading(false);
+        }
+    }, [minAge, maxAge, minPer, maxPer, loading]);
 
+
+   
     //$249.95
     //50%
 
@@ -141,6 +172,16 @@ const DashDefault = () => {
                                     aria-valuemax="100"
                                 />
                             </div>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col md={6} xl={8}>
+                    <Card>
+                        <Card.Header>
+                            <Card.Title as="h5">Number of bedroom</Card.Title>
+                        </Card.Header>
+                        <Card.Body>
+                            <BedroomArmChart objs={bedroomData} height="450px" />
                         </Card.Body>
                     </Card>
                 </Col>

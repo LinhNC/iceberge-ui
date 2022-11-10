@@ -17,7 +17,7 @@ const menuItems = {
                     id: 'insights-charts',
                     title: 'Insights Charts',
                     type: 'item',
-                    url: '',
+                    url: '/charts/nvd3',
                     icon: 'feather icon-pie-chart'
                 },
                 {
