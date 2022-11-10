@@ -1,8 +1,11 @@
 import React from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
+import { Row, Col, Card, Tabs, Tab } from 'react-bootstrap';
 
 import LineChart from './chart/LineChart';
 import BarDiscreteChart from './chart/BarDiscreteChart';
+import BarDiscreteChartPropertyType from './chart/BarDiscreteChartPropertyType';
+import BarDiscreteChartBedroom from './chart/BarDiscreteChartBedroom';
+import BarDiscreteChartDirection from './chart/BarDiscreteChartDirection';
 import PieAgeChart from './chart/PieAgeChart';
 import PieLocationChart from './chart/PieLocationChart';
 import RadarChart from './chart/RadarChart';
@@ -52,17 +55,30 @@ const Nvd3Chart = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={6}>
+                <Col md={7}>
                     <Card>
                         <Card.Header>
-                            <Card.Title as="h5">Discrete Bar Chart</Card.Title>
+                            <Card.Title as="h5">Attributes - Your consumer is interested in</Card.Title>
                         </Card.Header>
                         <Card.Body>
-                            <BarDiscreteChart />
+                            <Tabs variant="pills" defaultActiveKey="property-type">
+                                <Tab eventKey="property-type" title="Property type">
+                                    <BarDiscreteChartPropertyType />
+                                </Tab>
+                                <Tab eventKey="profile" title="Pricing">
+                                    <BarDiscreteChart />
+                                </Tab>
+                                <Tab eventKey="bedroom" title="Bedroom">
+                                    <BarDiscreteChartBedroom /> 
+                                </Tab>
+                                <Tab eventKey="direction" title="Direction">
+                                    <BarDiscreteChartDirection />
+                                </Tab>
+                            </Tabs>
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col sm={6}>
+                <Col sm={5}>
                     <Card>
                         <Card.Header>
                             <Card.Title as="h5">Location insights</Card.Title>

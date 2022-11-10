@@ -6,43 +6,43 @@ const datum = [
         key: 'Cumulative Return',
         values: [
             {
-                label: 'A',
-                value: -29.765957771107,
+                label: '< 2',
+                value: 15,
                 color: '#3ebfea'
             },
             {
-                label: 'B',
-                value: 10,
+                label: '2 - 2.5',
+                value: 2,
                 color: '#04a9f5'
             },
             {
-                label: 'C',
-                value: 32.807804682612,
+                label: '2.5 - 3',
+                value: 25,
                 color: '#ff8a65'
             },
             {
-                label: 'D',
-                value: 196.45946739256,
+                label: '3 - 3.5',
+                value: 19,
                 color: '#1de9b6'
             },
             {
-                label: 'E',
-                value: 0.25434030906893,
+                label: '3.5 - 4',
+                value: 12,
                 color: '#4C5667'
             },
             {
-                label: 'F',
-                value: -98.079782601442,
+                label: '4 - 4.5',
+                value: 4,
                 color: '#69CEC6'
             },
             {
-                label: 'G',
-                value: -13.925743130903,
+                label: '4.5 - 5',
+                value: 3,
                 color: '#a389d4'
             },
             {
-                label: 'H',
-                value: -5.1387322875705,
+                label: '> 5',
+                value: 2,
                 color: '#FE8A7D'
             }
         ]
@@ -50,7 +50,7 @@ const datum = [
 ];
 
 const BarDiscreteChart = () => {
-    return <NVD3Chart tooltip={{ enabled: true }} type="discreteBarChart" datum={datum} x="label" y="value" height={300} showValues />;
+    return <NVD3Chart tooltip={{ enabled: true }} type="discreteBarChart" datum={datum} x="label" y="value" height={300} width={400} showValues />;
 };
 
 export default BarDiscreteChart;

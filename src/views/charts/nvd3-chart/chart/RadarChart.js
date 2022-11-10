@@ -5,7 +5,7 @@ const RadarData = {
     labels: ["Restaurant", "Market", "School", "Hospital", "Office building"],
     datasets: [
         {
-            label: "March",
+            label: "Facilities",
             backgroundColor: "rgba(34, 202, 236, .2)",
             borderColor: "rgba(34, 202, 236, 1)",
             pointBackgroundColor: "rgba(34, 202, 236, 1)",

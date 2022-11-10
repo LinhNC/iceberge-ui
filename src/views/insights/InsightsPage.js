@@ -80,7 +80,7 @@ const InsightsPage = () => {
                                         </Form.Group>
                                         <ButtonGroup className="d-flex">
                                             <Button variant="danger" onClick={() => {
-                                                history.push('/charts/nvd3');
+                                                history.push('/charts/insights');
                                             }}>View consumer insights</Button>
                                         </ButtonGroup>
                                     </Form>

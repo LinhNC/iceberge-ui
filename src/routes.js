@@ -112,7 +112,7 @@ const routes = [
 
             {
                 exact: true,
-                path: '/charts/nvd3',
+                path: '/charts/insights',
                 component: lazy(() => import('./views/charts/nvd3-chart'))
             },
             {
