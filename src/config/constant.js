@@ -5,7 +5,7 @@ if (process.env.REACT_APP_BACKEND_SERVER) {
   BACKEND_DATA_SERVER = process.env.REACT_APP_BACKEND_DATA_SERVER
 } else {
   BACKEND_SERVER = "https://api-server-nodejs.appseed.us/api/";
-  BACKEND_DATA_SERVER = "http://171.235.9.157:8899/"
+  BACKEND_DATA_SERVER = "https://iceberg-srv.linh.work/"
 }
 
 export const BASENAME = ''; // don't add '/' at end off BASENAME
