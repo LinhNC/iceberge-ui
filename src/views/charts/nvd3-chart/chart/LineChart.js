@@ -1,96 +1,36 @@
 import React from 'react';
 import NVD3Chart from 'react-nvd3';
+import { timeFormat } from 'd3-time-format';
 
 function getDatum() {
-    var sin = [],
-        sin2 = [],
-        sin3 = [],
-        sin4 = [],
-        sin5 = [],
-        sin6 = [],
-        sin7 = [],
-        cos = [];
-    for (var i = 0; i < 100; i++) {
-        sin.push({
-            x: i,
-            y: Math.sin(i / 10)
-        });
-        sin2.push({
-            x: i,
-            y: Math.sin(i / 10) * 0.25 + 0.5
-        });
-        sin3.push({
-            x: i,
-            y: Math.sin(i / 10) * 0.25 + 0.2
-        });
-        sin4.push({
-            x: i,
-            y: Math.sin(i / 10) * 0.2 + 0.5
-        });
-        sin5.push({
-            x: i,
-            y: Math.sin(i / 10) * 0.1 + 0.5
-        });
-        sin6.push({
-            x: i,
-            y: Math.sin(i / 10) * 0.25 + 0.1
-        });
-        sin7.push({
-            x: i,
-            y: Math.sin(i / 10) * 0.1 + 0.1
-        });
+    var cos = [];
+
+    for (var i = 0; i < 12; i++) {
         cos.push({
-            x: i,
-            y: 0.5 * Math.cos(i / 10)
-        });
-    }
+          x: new Date().setMonth(i),
+          y: 0.5 * Math.cos(i / 10)
+        })
+      }
+
+    cos[0].y = 37.8;
+    cos[1].y = 35.9;
+    cos[2].y = 35.4;
+    cos[3].y = 31.7;
+    cos[4].y = 27.6;
+    cos[5].y = 26.4;
+    cos[6].y = 25.2;
+    cos[7].y = 26.9;
+    cos[8].y = 27.7;
+    cos[9].y = 30.4;
+    cos[10].y = 32.8;
+    cos[11].y = 33.2;
+
     return [
         {
-            values: sin,
-            key: '2022-10-02',
-            color: '#A389D4'
-        },
-        {
             values: cos,
-            key: '2022-10-09',
+            key: 'home-owner',
             color: '#04a9f5'
         },
-        {
-            values: sin2,
-            key: '2022-10-19',
-            color: '#1de9b6',
-            area: true
-        },
-        {
-            values: sin3,
-            key: '2022-11-09',
-            color: '#f4c22b',
-            area: true
-        },
-        {
-            values: sin4,
-            key: '2022-10-25',
-            color: '#ff8a65',
-            area: true
-        },
-        {
-            values: sin5,
-            key: '2022-10-28',
-            color: '#ff1a65',
-            area: true
-        },
-        {
-            values: sin6,
-            key: '2022-10-28',
-            color: '#231665',
-            area: true
-        },
-        {
-            values: sin7,
-            key: '2022-10-29',
-            color: '#231665',
-            area: true
-        }
     ];
 }
 
@@ -100,8 +40,9 @@ const LineChart = () => {
         <React.Fragment>
             {React.createElement(NVD3Chart, {
                 xAxis: {
+                    ticks: 12,
                     tickFormat: function (d) {
-                        return d;
+                        return timeFormat('%b')(new Date(d));
                     },
                     axisLabel: ''
                 },
