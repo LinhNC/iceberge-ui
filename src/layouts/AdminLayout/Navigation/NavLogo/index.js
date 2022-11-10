@@ -20,7 +20,7 @@ const NavLogo = () => {
         <React.Fragment>
             <div className="navbar-brand header-logo">
                 <Link to="#" className="b-brand">
-                    <img style={{ width: '160px', height: '48px', marginRight: '12px' }} src={logo} alt="logo" />
+                    <img style={{ width: '100%', height: '100%', marginRight: '12px' }} src={logo} alt="logo" />
                 </Link>
                 <Link
                     to="#"
