@@ -47,35 +47,35 @@ function getDatum() {
     return [
         {
             values: sin,
-            key: 'nhà mới',
+            key: '2022-10-02',
             color: '#A389D4'
         },
         {
             values: cos,
-            key: 'sang trọng',
+            key: '2022-10-09',
             color: '#04a9f5'
         },
         {
             values: sin2,
-            key: 'bể bơi',
+            key: '2022-10-19',
             color: '#1de9b6',
             area: true
         },
         {
             values: sin3,
-            key: 'view đẹp',
+            key: '2022-11-09',
             color: '#f4c22b',
             area: true
         },
         {
             values: sin4,
-            key: 'tiện nghi',
+            key: '2022-10-25',
             color: '#ff8a65',
             area: true
         },
         {
             values: sin5,
-            key: 'chính chủ',
+            key: '2022-10-28',
             color: '#ff1a65',
             area: true
         },
@@ -87,7 +87,7 @@ function getDatum() {
         },
         {
             values: sin7,
-            key: 'trường học',
+            key: '2022-10-29',
             color: '#231665',
             area: true
         }
