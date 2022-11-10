@@ -3,6 +3,7 @@ import { Row, Col, Card, Form, Button, ButtonGroup } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import InsightsImage from '../../assets/images/insights/graphic_investment.svg';
 import '../../assets/scss/partials/pages/insights.scss';
+import { useHistory } from "react-router-dom";
 
 import Select from 'react-select';
 
@@ -13,16 +14,16 @@ const propertyTypesOptions = [
     { value: 'Khu đô thị mới', label: 'Khu đô thị mới' },
     { value: 'Dự án khác', label: 'Dự án khác' },
     { value: 'Căn hộ chung cư', label: 'Căn hộ chung cư' },
-  ];
+];
 
 const provinceOptions = [
-  { value: 'Phú Quốc, Kiên Giang', label: 'Phú Quốc, Kiên Giang' },
-  { value: 'Dĩ An, Bình Dương', label: 'Dĩ An, Bình Dương' },
-  { value: 'Bàu Bàng, Bình Dương', label: 'Bàu Bàng, Bình Dương' },
-  { value: 'Bến Cát, Bình Dương', label: 'Bến Cát, Bình Dương' },
-  { value: 'Phú Giáo, Bình Dương', label: 'Phú Giáo, Bình Dương' },
-  { value: 'Tân Uyên, Bình Dương', label: 'Tân Uyên, Bình Dương' },
-  { value: 'Thuận An, Bình Dương', label: 'Thuận An, Bình Dương' },
+    { value: 'Phú Quốc, Kiên Giang', label: 'Phú Quốc, Kiên Giang' },
+    { value: 'Dĩ An, Bình Dương', label: 'Dĩ An, Bình Dương' },
+    { value: 'Bàu Bàng, Bình Dương', label: 'Bàu Bàng, Bình Dương' },
+    { value: 'Bến Cát, Bình Dương', label: 'Bến Cát, Bình Dương' },
+    { value: 'Phú Giáo, Bình Dương', label: 'Phú Giáo, Bình Dương' },
+    { value: 'Tân Uyên, Bình Dương', label: 'Tân Uyên, Bình Dương' },
+    { value: 'Thuận An, Bình Dương', label: 'Thuận An, Bình Dương' },
 ];
 
 const priceOptions = [
@@ -31,7 +32,7 @@ const priceOptions = [
     { value: '3 - 5 tỷ', label: '3 - 5 tỷ' },
     { value: '5 - 7 tỷ', label: '5 - 7 tỷ' },
     { value: '> 7 tỷ', label: '> 7 tỷ' },
-  ];
+];
 
 
 const InsightsPage = () => {
@@ -39,11 +40,13 @@ const InsightsPage = () => {
     const [selectedProvinceOption, setSelectedProvinceOption] = useState(null);
     const [selectedPriceOption, setSelectedPriceOption] = useState(null);
 
+    const history = useHistory();
+
     return (
         <React.Fragment>
             <Row>
                 <Col>
-                <Card className="insights">
+                    <Card className="insights">
                         <Card.Header>
                             <Card.Title as="h5">Please tell us what you want to sell</Card.Title>
                         </Card.Header>
@@ -76,7 +79,9 @@ const InsightsPage = () => {
                                             />
                                         </Form.Group>
                                         <ButtonGroup className="d-flex">
-                                            <Button variant="danger">View consumer insights</Button>
+                                            <Button variant="danger" onClick={() => {
+                                                history.push('/charts/nvd3');
+                                            }}>View consumer insights</Button>
                                         </ButtonGroup>
                                     </Form>
                                 </Col>
