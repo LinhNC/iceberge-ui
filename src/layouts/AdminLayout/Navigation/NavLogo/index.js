@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { ConfigContext } from '../../../../contexts/ConfigContext';
 import * as actionType from '../../../../store/actions';
+
 import logo from './../../assets/images/bds_logo.png';
 
 const NavLogo = () => {
