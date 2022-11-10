@@ -6,6 +6,7 @@ import BarDiscreteChart from './chart/BarDiscreteChart';
 import PieAgeChart from './chart/PieAgeChart';
 import PieLocationChart from './chart/PieLocationChart';
 import RadarChart from './chart/RadarChart';
+import WordCloud from './chart/WordCloud';
 
 const Nvd3Chart = () => {
     return (
@@ -38,6 +39,16 @@ const Nvd3Chart = () => {
                         </Card.Header>
                         <Card.Body>
                             <LineChart />
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col sm={12}>
+                    <Card>
+                        <Card.Header>
+                            <Card.Title as="h5">Content - The most popular keywords viewed</Card.Title>
+                        </Card.Header>
+                        <Card.Body>
+                            <WordCloud />
                         </Card.Body>
                     </Card>
                 </Col>

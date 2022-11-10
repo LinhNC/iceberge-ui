@@ -7,15 +7,15 @@ const menuItems = {
             icon: 'icon-navigation',
             children: [
                 {
-                    id: 'insights',
-                    title: 'Insights',
+                    id: 'onboarding',
+                    title: 'Onboarding',
                     type: 'item',
                     url: '/app/insights',
                     icon: 'feather icon-activity'
                 },
                 {
-                    id: 'insights-charts',
-                    title: 'Insights Charts',
+                    id: 'insights',
+                    title: 'Insights',
                     type: 'item',
                     url: '/charts/nvd3',
                     icon: 'feather icon-pie-chart'
@@ -29,7 +29,7 @@ const menuItems = {
                 },
                 {
                     id: 'contact',
-                    title: 'Contact Agents',
+                    title: 'Find Agents',
                     type: 'item',
                     url: '/pages/contact-agents',
                     icon: 'feather icon-phone-call'
