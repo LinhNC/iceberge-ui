@@ -3,14 +3,34 @@ import { Row, Col, Card } from 'react-bootstrap';
 
 import LineChart from './chart/LineChart';
 import BarDiscreteChart from './chart/BarDiscreteChart';
-import PieDonutChart from './chart/PieDonutChart';
-import PieBasicChart from './chart/PieBasicChart';
+import PieAgeChart from './chart/PieAgeChart';
+import PieLocationChart from './chart/PieLocationChart';
 import MultiBarChart from './chart/MultiBarChart';
 
 const Nvd3Chart = () => {
     return (
         <React.Fragment>
             <Row>
+                <Col md={6}>
+                    <Card>
+                        <Card.Header>
+                            <Card.Title as="h5">Age</Card.Title>
+                        </Card.Header>
+                        <Card.Body className="text-center">
+                            <PieAgeChart />
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col md={6}>
+                    <Card>
+                        <Card.Header>
+                            <Card.Title as="h5">Location</Card.Title>
+                        </Card.Header>
+                        <Card.Body className="text-center">
+                            <PieLocationChart />
+                        </Card.Body>
+                    </Card>
+                </Col>
                 <Col md={6}>
                     <Card>
                         <Card.Header>
@@ -41,26 +61,7 @@ const Nvd3Chart = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={6}>
-                    <Card>
-                        <Card.Header>
-                            <Card.Title as="h5">Pie Basic Chart</Card.Title>
-                        </Card.Header>
-                        <Card.Body className="text-center">
-                            <PieBasicChart />
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col md={6}>
-                    <Card>
-                        <Card.Header>
-                            <Card.Title as="h5">Donut Chart</Card.Title>
-                        </Card.Header>
-                        <Card.Body className="text-center">
-                            <PieDonutChart />
-                        </Card.Body>
-                    </Card>
-                </Col>
+
             </Row>
         </React.Fragment>
     );
