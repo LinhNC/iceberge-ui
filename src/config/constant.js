@@ -7,7 +7,7 @@ if (process.env.REACT_APP_BACKEND_SERVER) {
   BACKEND_SERVER = "https://api-server-nodejs.appseed.us/api/";
   BACKEND_DATA_SERVER = "http://171.235.9.157:8899/"
 }
-
+// test
 export const BASENAME = ''; // don't add '/' at end off BASENAME
 export const BASE_URL = '/app/insights';
 export const BASE_TITLE = ' | Guru 360 ';
