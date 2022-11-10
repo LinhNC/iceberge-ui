@@ -5,7 +5,7 @@ import LineChart from './chart/LineChart';
 import BarDiscreteChart from './chart/BarDiscreteChart';
 import PieAgeChart from './chart/PieAgeChart';
 import PieLocationChart from './chart/PieLocationChart';
-import MultiBarChart from './chart/MultiBarChart';
+import RadarChart from './chart/RadarChart';
 
 const Nvd3Chart = () => {
     return (
@@ -51,13 +51,13 @@ const Nvd3Chart = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col sm={12}>
+                <Col sm={6}>
                     <Card>
                         <Card.Header>
-                            <Card.Title as="h5">Stacked/Grouped Multi-Bar Chart</Card.Title>
+                            <Card.Title as="h5">Location insights</Card.Title>
                         </Card.Header>
                         <Card.Body>
-                            <MultiBarChart />
+                            <RadarChart />
                         </Card.Body>
                     </Card>
                 </Col>
