@@ -81,7 +81,7 @@ function getDatum() {
         },
         {
             values: sin6,
-            key: 'thuận tiện',
+            key: '2022-10-28',
             color: '#231665',
             area: true
         },

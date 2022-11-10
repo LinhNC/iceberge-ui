@@ -35,7 +35,7 @@ const Nvd3Chart = () => {
                 <Col md={12}>
                     <Card>
                         <Card.Header>
-                            <Card.Title as="h5">Keyword trending</Card.Title>
+                            <Card.Title as="h5">Search trending</Card.Title>
                         </Card.Header>
                         <Card.Body>
                             <LineChart />
